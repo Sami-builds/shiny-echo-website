@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShinyEcho Commands | Take Tym & Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #e8e8e8;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            color: #ffd700;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #00d4ff;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+        h2 {
+            color: #ffd700;
+            border-bottom: 2px solid #00d4ff;
+            padding-bottom: 10px;
+            margin: 30px 0 20px 0;
+        }
+        .command-list {
+            list-style: none;
+        }
+        .command-list li {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #00d4ff;
+            transition: all 0.3s ease;
+        }
+        .command-list li:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+        .command {
+            font-family: 'Courier New', monospace;
+            background: #0f3460;
+            padding: 3px 10px;
+            border-radius: 4px;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+        .description {
+            color: #b8b8b8;
+            margin-top: 5px;
+        }
+        .role {
+            display: inline-block;
+            background: #6c5ce7;
+            color: white;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+        }
+        .role.follower { background: #e17055; }
+        .role.subscriber { background: #00b894; }
+        .role.mod { background: #d63031; }
+        .role.vip { background: #fdcb6e; color: #333; }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #888;
+        }
+        .footer a {
+            color: #00d4ff;
+            text-decoration: none;
+        }
+        .status {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .status.working { background: #00b894; }
+        .status.coming { background: #fdcb6e; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚓ ShinyEcho Commands</h1>
+        <p class="subtitle">Harbor Pilot • Signal Guide • Chat Companion</p>
+
+        <h2>📋 Available Commands</h2>
+        
+        <h3 style="color: #00d4ff; margin: 20px 0 10px 0;">🎯 Everyone</h3>
+        <ul class="command-list">
+            <li>
+                <span class="role">Everyone</span>
+                <br><span class="command">!hello</span>
+                <p class="description">ShinyEcho says hi!</p>
+            </li>
+            <li>
+                <span class="role">Everyone</span>
+                <br><span class="command">!shiny</span>
+                <p class="description">Learn about ShinyEcho - the Harbor Pilot</p>
+            </li>
+            <li>
+                <span class="role">Everyone</span>
+                <br><span class="command">!help</span>
+                <p class="description">Show available commands</p>
+            </li>
+            <li>
+                <span class="role">Everyone</span>
+                <br><span class="command">!ping</span>
+                <p class="description">Pong!</p>
+            </li>
+        </ul>
+
+        <h2>🤖 Bot Status</h2>
+        <ul class="command-list">
+            <li>
+                <span class="status working"></span><strong>Chat Connection</strong> - Connected to Twitch!
+            </li>
+            <li>
+                <span class="status working"></span><strong>Basic Commands</strong> - !hello, !shiny, !help, !ping
+            </li>
+            <li>
+                <span class="status coming"></span><strong>Alerts System</strong> - Coming Soon
+            </li>
+            <li>
+                <span class="status coming"></span><strong>Timers</strong> - Coming Soon
+            </li>
+            <li>
+                <span class="status coming"></span><strong>Loyalty Points</strong> - Coming Soon
+            </li>
+            <li>
+                <span class="status coming"></span><strong>Voice Responses</strong> - Coming Soon
+            </li>
+        </ul>
+
+        <h2>📅 Coming Soon</h2>
+        <ul class="command-list">
+            <li>
+                <span class="role follower">Follower</span>
+                <br><span class="command">!followage</span>
+                <p class="description">How long you've been following</p>
+            </li>
+            <li>
+                <span class="role follower">Follower</span>
+                <br><span class="command">!followcount</span>
+                <p class="description">Total follower count</p>
+            </li>
+            <li>
+                <span class="role subscriber">Subscriber</span>
+                <br><span class="command">!subage</span>
+                <p class="description">How long you've been subscribed</p>
+            </li>
+            <li>
+                <span class="role subscriber">Subscriber</span>
+                <br><span class="command">!subcount</span>
+                <p class="description">Total subscriber count</p>
+            </li>
+            <li>
+                <span class="role">Everyone</span>
+                <br><span class="command">!uptime</span>
+                <p class="description">How long the stream has been live</p>
+            </li>
+            <li>
+                <span class="role">Everyone</span>
+                <br><span class="command">!game</span>
+                <p class="description">Current game being played</p>
+            </li>
+            <li>
+                <span class="role">Everyone</span>
+                <br><span class="command">!title</span>
+                <p class="description">Current stream title</p>
+            </li>
+            <li>
+                <span class="role mod">Moderator</span>
+                <br><span class="command">!shoutout @user</span>
+                <p class="description">Give a shoutout to another streamer</p>
+            </li>
+            <li>
+                <span class="role mod">Moderator</span>
+                <br><span class="command">!settitle [text]</span>
+                <p class="description">Change the stream title</p>
+            </li>
+            <li>
+                <span class="role mod">Moderator</span>
+                <br><span class="command">!setgame [game]</span>
+                <p class="description">Change the current game</p>
+            </li>
+        </ul>
+
+        <div class="footer">
+            <p>🔗 <a href="https://twitch.tv/taketym">Watch TakeTym on Twitch</a></p>
+            <p>💬 <a href="https://discord.gg/taketymgames">Join our Discord</a></p>
+            <p style="margin-top: 20px; opacity: 0.6;">
+                Powered by ShinyEcho • Harbor Pilot for Take Tym & Game
+            </p>
+        </div>
+    </div>
+</body>
+</html>

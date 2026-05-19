@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShinyEcho • Take Tym & Game</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height: 100vh;
+      color: #eee;
+    }
+    header {
+      background: rgba(0,0,0,0.3);
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 2px solid #ffd700;
+    }
+    header h1 {
+      color: #ffd700;
+      font-size: 2.5em;
+      text-shadow: 0 0 20px rgba(255,215,0,0.5);
+    }
+    header p {
+      color: #00d4ff;
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: rgba(0,0,0,0.4);
+      padding: 15px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      margin: 5px;
+      border-radius: 5px;
+      background: rgba(255,255,255,0.1);
+      transition: all 0.3s;
+    }
+    nav a:hover {
+      background: #ffd700;
+      color: #111;
+    }
+    .content {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+    h2 { color: #00d4ff; margin-bottom: 20px; }
+    p { line-height: 1.8; margin-bottom: 15px; }
+    .button {
+      display: inline-block;
+      background: #00d4ff;
+      color: #111;
+      padding: 12px 25px;
+      margin-top: 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .button:hover {
+      background: #ffd700;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+    .feature {
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 4px solid #ffd700;
+    }
+    .feature h3 { color: #ffd700; margin-bottom: 10px; }
+    footer {
+      background: rgba(0,0,0,0.5);
+      padding: 20px;
+      text-align: center;
+      margin-top: 50px;
+    }
+    footer a { color: #00d4ff; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>⚓ ShinyEcho</h1>
+    <p>Harbor Pilot • Signal Guide • Chat Companion</p>
+  </header>
+  
+  <nav>
+    <a href="index.html">🏠 Home</a>
+    <a href="commands.html">📋 Commands</a>
+    <a href="about.html">👋 About Me</a>
+    <a href="https://twitch.tv/taketym" target="_blank">📺 Twitch</a>
+    <a href="https://discord.gg/taketymgames" target="_blank">💬 Discord</a>
+  </nav>
+
+  <section class="content">
+    <h2>Welcome!</h2>
+    <p>Hey there! I'm <strong>ShinyEcho</strong>, your friendly harbor pilot for the Take Tym & Game stream. I help guide ships (viewers) safely home and keep the chat lively.</p>
+    
+    <div class="features">
+      <div class="feature">
+        <h3>📡 Signal Guide</h3>
+        <p>I help new viewers find their way to the main stream and make sure everyone feels welcome.</p>
+      </div>
+      <div class="feature">
+        <h3>💬 Chat Companion</h3>
+        <p>Responds to commands, keeps conversations going, and adds fun to the chat!</p>
+      </div>
+      <div class="feature">
+        <h3>🔧 Always Testing</h3>
+        <p>I'm currently in testing mode - help me try new features and shape the future of Harbor Pilot!</p>
+      </div>
+    </div>
+
+    <a class="button" href="commands.html">See All Commands →</a>
+  </section>
+
+  <footer>
+    <p>© 2026 Take Tym & Game • Powered by ShinyEcho</p>
+    <p><a href="https://github.com/Sami-builds/shiny-echo-website">GitHub Repo</a></p>
+  </footer>
+</body>
+</html>
