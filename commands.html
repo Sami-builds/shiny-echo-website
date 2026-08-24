@@ -3,264 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShinyEcho Commands | Take Tym & Game</title>
+    <title>Shiny Echo Commands | Take Tym &amp; Game</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e8e8e8; padding: 40px 20px; }
+        .container { max-width: 900px; margin: 0 auto; }
+        h1 { text-align: center; font-size: 3em; color: #ffd700; text-shadow: 0 0 20px rgba(255, 215, 0, 0.5); margin-bottom: 10px; }
+        .subtitle { text-align: center; color: #00d4ff; font-size: 1.2em; margin-bottom: 40px; }
+        h2 { color: #ffd700; border-bottom: 2px solid #00d4ff; padding-bottom: 10px; margin: 30px 0 20px 0; }
+        .command-list { list-style: none; }
+        .command-list li { background: rgba(255, 255, 255, 0.05); padding: 15px 20px; margin: 10px 0; border-radius: 8px; border-left: 4px solid #00d4ff; transition: all 0.3s ease; }
+        .command-list li:hover { background: rgba(255, 255, 255, 0.1); transform: translateX(5px); }
+        .command { font-family: 'Courier New', monospace; background: #0f3460; padding: 3px 10px; border-radius: 4px; color: #00d4ff; font-weight: bold; }
+        .description { color: #b8b8b8; margin-top: 5px; }
+        .category-icon { font-size: 1.2em; margin-right: 8px; }
+        .footer { text-align: center; margin-top: 50px; padding: 20px; color: #888; }
+        .footer a { color: #00d4ff; text-decoration: none; }
+        nav { display: flex; justify-content: center; background: rgba(0,0,0,0.4); padding: 15px; flex-wrap: wrap; margin-bottom: 20px; }
+        nav a { color: #fff; padding: 10px 20px; text-decoration: none; margin: 5px; border-radius: 5px; background: rgba(255,255,255,0.1); }
+        nav a.active { color: #ffd700; }
+        .channel-link { text-align: center; margin-bottom: 30px; }
+        .channel-link a { color: #00d4ff; }
+        @media (max-width: 600px) {
+            body { padding: 20px 12px; }
+            h1 { font-size: 2.1em; }
+            h2 { font-size: 1.3em; }
+            .command-list li { padding: 14px; }
         }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            min-height: 100vh;
-            color: #e8e8e8;
-            padding: 40px 20px;
-        }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        h1 {
-            text-align: center;
-            font-size: 3em;
-            color: #ffd700;
-            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            text-align: center;
-            color: #00d4ff;
-            font-size: 1.2em;
-            margin-bottom: 40px;
-        }
-        h2 {
-            color: #ffd700;
-            border-bottom: 2px solid #00d4ff;
-            padding-bottom: 10px;
-            margin: 30px 0 20px 0;
-        }
-        .command-list {
-            list-style: none;
-        }
-        .command-list li {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 15px 20px;
-            margin: 10px 0;
-            border-radius: 8px;
-            border-left: 4px solid #00d4ff;
-            transition: all 0.3s ease;
-        }
-        .command-list li:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateX(5px);
-        }
-        .command {
-            font-family: 'Courier New', monospace;
-            background: #0f3460;
-            padding: 3px 10px;
-            border-radius: 4px;
-            color: #00d4ff;
-            font-weight: bold;
-        }
-        .description {
-            color: #b8b8b8;
-            margin-top: 5px;
-        }
-        .role {
-            display: inline-block;
-            background: #6c5ce7;
-            color: white;
-            padding: 2px 10px;
-            border-radius: 12px;
-            font-size: 0.8em;
-            margin-bottom: 10px;
-        }
-        .role.follower { background: #e17055; }
-        .role.subscriber { background: #00b894; }
-        .role.mod { background: #d63031; }
-        .role.vip { background: #fdcb6e; color: #333; }
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            color: #888;
-        }
-        .footer a {
-            color: #00d4ff;
-            text-decoration: none;
-        }
-        .status {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            margin-right: 8px;
-        }
-        .status.working { background: #00b894; }
-        .status.coming { background: #fdcb6e; }
     </style>
 </head>
 <body>
-    <nav style="display:flex;justify-content:center;background:rgba(0,0,0,0.4);padding:15px;flex-wrap:wrap;margin-bottom:20px;">
-        <a href="index.html" style="color:#fff;padding:10px 20px;text-decoration:none;margin:5px;border-radius:5px;background:rgba(255,255,255,0.1);">🏠 Home</a>
-        <a href="commands.html" style="color:#ffd700;padding:10px 20px;text-decoration:none;margin:5px;border-radius:5px;background:rgba(255,255,255,0.1);">📋 Commands</a>
-        <a href="about.html" style="color:#fff;padding:10px 20px;text-decoration:none;margin:5px;border-radius:5px;background:rgba(255,255,255,0.1);">👋 About Me</a>
-        <a href="https://twitch.tv/taketym" target="_blank" style="color:#fff;padding:10px 20px;text-decoration:none;margin:5px;border-radius:5px;background:rgba(255,255,255,0.1);">📺 Twitch</a>
+    <nav>
+        <a href="index.html">🏠 Home</a>
+        <a class="active" href="commands.html">📋 Commands</a>
+        <a href="about.html">👋 About Me</a>
+        <a href="https://twitch.tv/katyonka_" target="_blank" rel="noopener noreferrer">📺 Twitch</a>
     </nav>
     <div class="container">
-        <h1>⚓ ShinyEcho Commands</h1>
-        <p style="text-align:center;margin-bottom:30px;">🎮 <a href="https://twitch.tv/katyonka_" target="_blank" style="color:#00d4ff;">Come play with ShinyEcho on katyonka_'s channel!</a></p>
+        <h1>⚓ Shiny Echo Commands</h1>
+        <p class="channel-link">🎮 <a href="https://twitch.tv/katyonka_" target="_blank" rel="noopener noreferrer">Come play with Shiny Echo on katyonka_'s channel!</a></p>
         <p class="subtitle">Harbor Pilot • Signal Guide • Chat Companion</p>
 
-        <h2>📋 Available Commands</h2>
-        
-        <h3 style="color: #00d4ff; margin: 20px 0 10px 0;">🎯 Everyone</h3>
+        <h2><span class="category-icon">🎮</span>Fun Commands</h2>
         <ul class="command-list">
-            <li>
-                <span class="role">Everyone</span>
-                <br><span class="command">!hello</span>
-                <p class="description">ShinyEcho says hi!</p>
-            </li>
-            <li>
-                <span class="role">Everyone</span>
-                <br><span class="command">!shiny</span>
-                <p class="description">Learn about ShinyEcho - the Harbor Pilot</p>
-            </li>
-            <li>
-                <span class="role">Everyone</span>
-                <br><span class="command">!help</span>
-                <p class="description">Show available commands</p>
-            </li>
-            <li>
-                <span class="role">Everyone</span>
-                <br><span class="command">!ping</span>
-                <p class="description">Pong!</p>
-            </li>
+            <li><span class="command">!joke</span><p class="description">Tells a random joke</p></li>
+            <li><span class="command">!funfact</span><p class="description">Shares a fun fact</p></li>
+            <li><span class="command">!fortune</span><p class="description">Gives you a fortune cookie message</p></li>
+            <li><span class="command">!wyr</span><p class="description">Posts a “Would You Rather” question to get chat talking. Shiny Echo does not currently track or reply to answers.</p></li>
+            <li><span class="command">!roll</span><p class="description">Roll a die (1–6)</p></li>
+            <li><span class="command">!pick option1|option2|option3</span><p class="description">Picks between options. Example: !pick pizza|burger|tacos</p></li>
+            <li><span class="command">!8ball</span><p class="description">Gives a Magic 8 Ball answer</p></li>
+            <li><span class="command">!rps</span><p class="description">Plays rock, paper, scissors</p></li>
         </ul>
 
-        <h2>🤖 Bot Status</h2>
+        <h2><span class="category-icon">🌊</span>Community Commands</h2>
         <ul class="command-list">
-            <li>
-                <span class="status working"></span><strong>Chat Connection</strong> - Connected to Twitch!
-            </li>
-            <li>
-                <span class="status working"></span><strong>Basic Commands</strong> - !hello, !shiny, !help, !ping
-            </li>
-            <li>
-                <span class="status coming"></span><strong>Alerts System</strong> - Coming Soon
-            </li>
-            <li>
-                <span class="status coming"></span><strong>Timers</strong> - Coming Soon
-            </li>
-            <li>
-                <span class="status coming"></span><strong>Loyalty Points</strong> - Coming Soon
-            </li>
-            <li>
-                <span class="status coming"></span><strong>Voice Responses</strong> - Coming Soon
-            </li>
+            <li><span class="command">!about</span><p class="description">Learn about Shiny Echo</p></li>
+            <li><span class="command">!goal</span><p class="description">See the current stream goal</p></li>
+            <li><span class="command">!hello</span><p class="description">Say hello to Shiny Echo</p></li>
+            <li><span class="command">!lurk</span><p class="description">Let chat know you're lurking</p></li>
+            <li><span class="command">!discord</span><p class="description">Get the community Discord invite</p></li>
         </ul>
 
-        <h2>📅 Coming Soon</h2>
+        <h2><span class="category-icon">⏰</span>Stream Commands</h2>
         <ul class="command-list">
-            <li>
-                <span class="role follower">Follower</span>
-                <br><span class="command">!followage</span>
-                <p class="description">How long you've been following</p>
-            </li>
-            <li>
-                <span class="role follower">Follower</span>
-                <br><span class="command">!followcount</span>
-                <p class="description">Total follower count</p>
-            </li>
-            <li>
-                <span class="role subscriber">Subscriber</span>
-                <br><span class="command">!subage</span>
-                <p class="description">How long you've been subscribed</p>
-            </li>
-            <li>
-                <span class="role subscriber">Subscriber</span>
-                <br><span class="command">!subcount</span>
-                <p class="description">Total subscriber count</p>
-            </li>
-            <li>
-                <span class="role">Everyone</span>
-                <br><span class="command">!uptime</span>
-                <p class="description">How long the stream has been live</p>
-            </li>
-            <li>
-                <span class="role">Everyone</span>
-                <br><span class="command">!game</span>
-                <p class="description">Current game being played</p>
-            </li>
-            <li>
-                <span class="role">Everyone</span>
-                <br><span class="command">!title</span>
-                <p class="description">Current stream title</p>
-            </li>
+            <li><span class="command">!title</span><p class="description">See the current stream title</p></li>
+            <li><span class="command">!game</span><p class="description">See the game currently being played</p></li>
+            <li><span class="command">!webpage</span><p class="description">Get the Take Tym &amp; Game website address</p></li>
         </ul>
-        <h2>🔹 All ShinyEcho Commands</h2>
+
+        <h2><span class="category-icon">💎</span>Chrono Shards Commands</h2>
         <ul class="command-list">
-            <li><span class="command">!beer</span> <span class="description">Enjoy a virtual beer</span></li>
-            <li><span class="command">!coffee</span> <span class="description">Here’s a fresh coffee</span></li>
-            <li><span class="command">!tea</span> <span class="description">A soothing cup of tea</span></li>
-            <li><span class="command">!lotus</span> <span class="description">Lotus power activated</span></li>
-            <li><span class="command">!joke</span> <span class="description">Random joke</span></li>
-            <li><span class="command">!funfact</span> <span class="description">Fun fact</span></li>
-            <li><span class="command">!dogfact</span> <span class="description">Dog fact</span></li>
-            <li><span class="command">!catfact</span> <span class="description">Cat fact</span></li>
-            <li><span class="command">!gamingfact</span> <span class="description">Gaming fact</span></li>
-            <li><span class="command">!timefact</span> <span class="description">Current PT time</span></li>
-            <li><span class="command">!fortune</span> <span class="description">Your stream fortune</span></li>
-            <li><span class="command">!about</span> <span class="description">About ShinyEcho</span></li>
-            <li><span class="command">!goal</span> <span class="description">Our community goal</span></li>
-            <li><span class="command">!ad</span> <span class="description">Merch link</span></li>
-            <li><span class="command">!adwb</span> <span class="description">Patreon support</span></li>
-            <li><span class="command">!clip</span> <span class="description">Clip highlight (coming soon)</span></li>
-            <li><span class="command">!uptime</span> <span class="description">Stream uptime</span></li>
-            <li><span class="command">!title</span> <span class="description">Current stream title</span></li>
-            <li><span class="command">!game</span> <span class="description">Current game</span></li>
-            <li><span class="command">!so @user</span> <span class="description">Shoutout (mods)</span></li>
-            <li><span class="command">!sponsor @user</span> <span class="description">Sponsor thanks (mods)</span></li>
-            <li><span class="command">!kudos @user</span> <span class="description">Give kudos</span></li>
-            <li><span class="command">!hotpotato</span> <span class="description">Hot potato game</span></li>
-            <li><span class="command">!guess [1-100]</span> <span class="description">Number guessing game</span></li>
-            <li><span class="command">!guessword [word]</span> <span class="description">Guess the secret word</span></li>
-            <li><span class="command">!hint</span> <span class="description">Hint for guessword</span></li>
-            <li><span class="command">!wyr</span> <span class="description">Would you rather?</span></li>
-            <li><span class="command">!lurk</span> <span class="description">Lurker acknowledgment</span></li>
-            <li><span class="command">!newgame</span> <span class="description">Start a new game</span></li>
-            <li><span class="command">!roll</span> <span class="description">Roll a dice</span></li>
-            <li><span class="command">!flip</span> <span class="description">Flip a coin</span></li>
-            <li><span class="command">!pick</span> <span class="description">Random pick</span></li>
-            <li><span class="command">!8ball</span> <span class="description">Magic 8‑Ball</span></li>
-            <li><span class="command">!rps</span> <span class="description">Rock‑Paper‑Scissors</span></li>
-            <li><span class="command">!discord</span> <span class="description">Discord invite link</span></li>
-            <li><span class="command">!nowplaying</span> <span class="description">Current song (soon)</span></li>
-            <li><span class="command">!music</span> <span class="description">Background music (soon)</span></li>
-        </ul>            <li>
-                <span class="role mod">Moderator</span>
-                <br><span class="command">!shoutout @user</span>
-                <p class="description">Give a shoutout to another streamer</p>
-            </li>
-            <li>
-                <span class="role mod">Moderator</span>
-                <br><span class="command">!settitle [text]</span>
-                <p class="description">Change the stream title</p>
-            </li>
-            <li>
-                <span class="role mod">Moderator</span>
-                <br><span class="command">!setgame [game]</span>
-                <p class="description">Change the current game</p>
-            </li>
+            <li><span class="command">!checkin</span><p class="description">Check in to earn Chrono Shards</p></li>
+            <li><span class="command">!shards</span><p class="description">Check your Chrono Shards balance, streak, and check-ins</p></li>
+            <li><span class="command">!balance</span><p class="description">Another way to check your Shards balance</p></li>
+            <li><span class="command">!shop</span><p class="description">View the available rewards, prices, and stream limits</p></li>
+            <li><span class="command">!redeem greeting</span><p class="description">Redeem a custom greeting for 50 💎 • once per stream</p></li>
+            <li><span class="command">!redeem wyr</span><p class="description">Post a random Would You Rather question for 75 💎 • up to three per stream</p></li>
+            <li><span class="command">!redeem phrase Your message here</span><p class="description">Submit a short phrase for moderator approval for 150 💎 • once per stream • 80 characters maximum</p></li>
+        </ul>
+
+        <h2><span class="category-icon">🛡️</span>Moderator Commands</h2>
+        <ul class="command-list">
+            <li><strong>Moderators:</strong> Use <span class="command">!modcommands</span> in chat.</li>
         </ul>
 
         <div class="footer">
-            <p>🔗 <a href="https://twitch.tv/taketym">Watch TakeTym on Twitch</a></p>
-            <p>💬 <a href="https://discord.gg/taketymgames">Join our Discord</a></p>
-            <p style="margin-top: 20px; opacity: 0.6;">
-                Powered by ShinyEcho • Harbor Pilot for Take Tym & Game
-            </p>
+            <p>🔗 <a href="https://twitch.tv/katyonka_">Watch Katyonka_ on Twitch</a></p>
+            <p>💬 <a href="https://discord.com/invite/vdW7cgUc4k">Join our Discord</a></p>
+            <p style="margin-top: 20px; opacity: 0.6;">Powered by Shiny Echo • Harbor Pilot for Take Tym &amp; Game</p>
         </div>
     </div>
 </body>
